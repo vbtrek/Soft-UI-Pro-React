@@ -1,13 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import PropTypes from 'prop-types'
+
 import PrimaryPinkButton from './primary-pink-button'
 import projectStyles from '../style.module.css'
 import styles from './header.module.css'
 
-const Header = () => {
+const Header = (props) => {
   return (
-    <div data-role="Header" className={styles['Header']}>
+    <div
+      data-role="Header"
+      className={` ${styles['Header']} ${styles[props.rootClassName]} `}
+    >
       <nav className={styles['Nav']}>
         <div className={styles['container']}>
           <Link
@@ -90,6 +95,14 @@ const Header = () => {
       </div>
     </div>
   )
+}
+
+Header.defaultProps = {
+  rootClassName: '',
+}
+
+Header.propTypes = {
+  rootClassName: PropTypes.string,
 }
 
 export default Header

@@ -7,7 +7,7 @@ import styles from './feature-card.module.css'
 
 const FeatureCard = (props) => {
   return (
-    <div className={styles['container']}>
+    <div className={` ${styles['container']} ${styles[props.rootClassName]} `}>
       <img
         alt={props.image_alt}
         src={props.image_src}
@@ -26,6 +26,7 @@ FeatureCard.defaultProps = {
   image_alt: 'image',
   text: 'Get the latest design ideas and turn it into reality.',
   title: 'Design',
+  rootClassName: '',
 }
 
 FeatureCard.propTypes = {
@@ -33,6 +34,7 @@ FeatureCard.propTypes = {
   image_alt: PropTypes.string,
   text: PropTypes.string,
   title: PropTypes.string,
+  rootClassName: PropTypes.string,
 }
 
 export default FeatureCard

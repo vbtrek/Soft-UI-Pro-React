@@ -7,7 +7,7 @@ import styles from './blog-card.module.css'
 
 const BlogCard = (props) => {
   return (
-    <div className={styles['container']}>
+    <div className={` ${styles['container']} ${styles[props.rootClassName]} `}>
       <img
         alt={props.image_alt}
         src={props.image_src}
@@ -27,6 +27,7 @@ BlogCard.defaultProps = {
   title: 'Rover raised $65 million',
   image_src:
     'https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/color-bags.jpg',
+  rootClassName: '',
 }
 
 BlogCard.propTypes = {
@@ -34,6 +35,7 @@ BlogCard.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   image_src: PropTypes.string,
+  rootClassName: PropTypes.string,
 }
 
 export default BlogCard

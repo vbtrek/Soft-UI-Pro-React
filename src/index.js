@@ -6,6 +6,7 @@ import './style.module.css'
 import ComingSoon from './views/coming-soon'
 import Profile from './views/profile'
 import Home from './views/home'
+import Blog from './views/blog'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route exact component={ComingSoon} path="/coming-soon" />
         <Route exact component={Profile} path="/profile" />
         <Route exact component={Home} path="/" />
+        <Route exact component={Blog} path="/blog" />
       </div>
     </Router>
   )
